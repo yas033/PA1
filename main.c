@@ -61,7 +61,7 @@ int32_t utf8_strlen(char str[]){
 int32_t codepoint_index_to_byte_index(char str[], int32_t cpi){
     int i=0; //Byte index
     int cur = 0;  //Current Index
-    while(str[i]=!'\0'){
+    while(str[i]!=0){
         if(is_ascii(str[i])==1){  //if is ascii
             cur +=1;
         }
