@@ -56,6 +56,32 @@ int32_t utf8_strlen(char str[]){
     return len;
 }
 
+
+
+int32_t codepoint_index_to_byte_index(char str[], int32_t cpi){
+    int i=0; //Byte index
+    int cur = 0;  //Current Index
+    while(str[i]=!'\0'){
+        if(is_ascii(str[i])==1){  //if is ascii
+            cur +=1;
+        }
+        else if(width_from_start_byte(str[i])==-1 &&width_from_start_byte(str[i+1])!=-1){                //if 
+            cur+=1;
+        }
+        else if (width_from_start_byte(str[i])==-1 && width_from_start_byte(str[i+1])==0){
+            cur += 1;
+        }
+        if(cur == cpi){
+            return i;
+        }
+        i+=1;
+    } 
+    return -1;
+
+}
+
+//return(c1 & 0b00011111)*262144+(c2 & 0b00111111)*4096+(c3 & 0b00111111)*64+(c4 & 0b00111111);
+
 int main(){
     // is_ascii
     printf("Is 🔥 ASCII? %d\n", is_ascii("🔥"));
@@ -74,5 +100,8 @@ int main(){
     //length of the codepoints
     char str1[] = "Joséph";
     printf("Length of string %s is %d\n", str1, utf8_strlen(str1));  // 6 codepoints, (even though 7 bytes)
+    int idx = 4;
+    //
+    printf("Codepoint index %d is byte index %d\n", idx, codepoint_index_to_byte_index("Joséph", idx));
 
 }
