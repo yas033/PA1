@@ -26,7 +26,7 @@ int32_t capitalize_ascii(char str[]){
 int32_t width_from_start_byte(char start_byte){
     int i=0;
          //read through all characters
-        if((start_byte & 0b11000000)== 0b11000000){        
+        if((start_byte & 0b10000000)== 0){        
             return 1;
         }
         else if ((start_byte & 0b11100000) == 0b11000000){
@@ -73,6 +73,6 @@ int main(){
     
     //length of the codepoints
     char str1[] = "Joséph";
-    printf("Length of string %s is %d\n", str, utf8_strlen(str1));  // 6 codepoints, (even though 7 bytes)
+    printf("Length of string %s is %d\n", str1, utf8_strlen(str1));  // 6 codepoints, (even though 7 bytes)
 
 }
