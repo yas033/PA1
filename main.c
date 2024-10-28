@@ -3,7 +3,7 @@
 
 int32_t is_ascii(char str[]){ 
     for(int i=0;str[i]!='\0';i+=1){       //i=0,i!=0,i+=1
-        if(str[i]>128||str[i]<0){         //is_not_ascci when certain str[i]<127||certain str[i]<0
+        if(str[i]>127||str[i]<0){         //is_not_ascci when certain str[i]<127||certain str[i]<0
         return 0;                         //if yes_it_is_not_ascci return 0;
         }
     }
