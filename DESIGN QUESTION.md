@@ -90,5 +90,7 @@ So to keep the memory efficiency, because using more bits will waste storage spa
 causing unnecessary waste. So we should not use the overlong UTF-8.
 
 reason #2
-Not every system can apply utf8, so garbled characters may appear during use.
+They can also cause issues because some systems don’t recognize them, 
+leading to unreadable text or security problems. 
+
 
