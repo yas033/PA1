@@ -6,9 +6,13 @@ Answer the following questions:
 What code point does it encode in UTF-8, and what character is that?
 1110 = 3 start byte
 10 means continuing byte
+
 Let’s encode it:
+
 11100000 10000000 10100001
+
 0000 000000 100001
+
 0000 0000 0010 0001 =  U+0021 = “!”
 
 Q2
