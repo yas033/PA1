@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//: is_ascii
+//is_ascii
 int32_t is_ascii(char str[]) {
     for (int i = 0; str[i] != '\0'; i++) {
         if ((unsigned char)str[i] > 127) {
@@ -103,25 +103,25 @@ char is_animal_emoji_at(char str[], int32_t cpi) {
 void utf8_analyzer(char str[]) {
     printf("Enter a UTF-8 encoded string: %s\n", str);
 
-    // ASCII Check
+    //ASCII Check
     int ascii_check = is_ascii(str);
     printf("Valid ASCII: %s\n", ascii_check ? "true" : "false");
 
-    // Uppercase ASCII
+    //Uppercase
     char upper_str[256];
     strcpy(upper_str, str);
     int uppercase_count = capitalize_ascii(upper_str);
     printf("Uppercased ASCII: \"%s\"\n", upper_str);
 
-    // Length in bytes
+    //Length in bytes
     int length_in_bytes = strlen(str);
     printf("Length in bytes: %d\n", length_in_bytes);
 
-    // Number of codepoints
+    //Number of codepoints
     int codepoints = utf8_strlen(str);
     printf("Number of code points: %d\n", codepoints);
 
-    // Bytes per code point
+    //Bytes per code point
     printf("Bytes per code point: ");
     for (int i = 0; i < codepoints; i++) {
         int byte_index = codepoint_index_to_byte_index(str, i);
@@ -131,12 +131,12 @@ void utf8_analyzer(char str[]) {
     }
     printf("\n");
 
-    // Substring of the first 6 codepoints
+    //Substring of the first 6 codepoints
     char substring[64];
     utf8_substring(str, 0, 6, substring);
     printf("Substring of the first 6 code points: \"%s\"\n", substring);
 
-    // Codepoints as decimal numbers
+    //Codepoints as decimal numbers
     printf("Code points as decimal numbers: ");
     for (int i = 0; i < codepoints; i++) {
         int32_t cp = codepoint_at(str, i);
@@ -146,7 +146,7 @@ void utf8_analyzer(char str[]) {
     }
     printf("\n");
 
-    // List of animal emojis
+    //List of animal emojis
     printf("Animal emojis: ");
     for (int i = 0; i < codepoints; i++) {
         if (is_animal_emoji_at(str, i)) {
@@ -160,7 +160,7 @@ void utf8_analyzer(char str[]) {
     }
     printf("\n");
 
-// Next Character of Codepoint at Index 3
+//Next Character of Codepoint at Index 3
     int32_t next_cp = codepoint_at(str, 3) + 1;
     printf("Next Character of Codepoint at Index 3: ");
     if (next_cp >= 0x1F400 && next_cp <= 0x1F99F) { // Check if it's a valid animal emoji range
