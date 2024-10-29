@@ -1,7 +1,8 @@
 # PA1
 
 Q1
-Consider the 3-byte sequence 11100000 10000000 10100001. Answer the following questions:
+Consider the 3-byte sequence 11100000 10000000 10100001.
+Answer the following questions:
 What code point does it encode in UTF-8, and what character is that?
 1110 = 3 start byte
 10 means continuing byte
@@ -31,7 +32,8 @@ For example:é
 11110000 10000000 10000011 10101001
 
 Q4
-What are some problems with having these multiple encodings, especially for ASCII characters? A web search for “overlong UTF-8 encoding” may be useful here.
+What are some problems with having these multiple encodings, especially for ASCII characters?
+A web search for “overlong UTF-8 encoding” may be useful here.
 Code point requirements for each UTF8 encoding type
 1 Byte encoding:
 Bits required for code point: 7 bits
