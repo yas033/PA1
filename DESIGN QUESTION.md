@@ -22,7 +22,7 @@ What are the three other ways to encode that character?
 
 1.One byte 
 
- 01010001
+ 01100001
  
 2.Two byte
 
