@@ -80,3 +80,8 @@ Bits required for code point: 12~16 bits
 4 Byte encoding:
 
 Bits required for code point: 17~21 bits
+
+The more bits we use, the longer processing time we need.
+
+So to keep the memory efficiency, we should not use the overlong UTF-8.
+
