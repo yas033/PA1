@@ -63,6 +63,8 @@ What are some problems with having these multiple encodings,
 especially for ASCII characters?
 A web search for “overlong UTF-8 encoding” may be useful here.
 
+reason #1
+
 Code point requirements for each UTF8 encoding type
 
 1 Byte encoding:
@@ -83,5 +85,10 @@ Bits required for code point: 17~21 bits
 
 The more bits we use, the longer processing time we need.
 
-So to keep the memory efficiency, we should not use the overlong UTF-8.
+So to keep the memory efficiency, because using more bits will waste storage space,
+
+causing unnecessary waste. So we should not use the overlong UTF-8.
+
+reason #2
+Not every system can apply utf8, so garbled characters may appear during use.
 
