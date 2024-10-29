@@ -1,6 +1,4 @@
 # PA1
-I used the google search and chatGPT to help me to go through the program and get better understanding
-
 PA1 - UTF-8:
 PA1 Resubmission: Due Date 10/28 at 10pm
 If you want to resubmit PA1, please read this section carefully. You need to pass all the tests in the original PA1, while also implementing an extra function described below.
